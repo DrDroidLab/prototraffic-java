@@ -24,11 +24,10 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.7.5'
+    implementation group: 'io.drdroid', name: 'api-java', version: '1.0.0'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    implementation project(":drdroidapi-java")
-
 }
 
 tasks.named('test') {

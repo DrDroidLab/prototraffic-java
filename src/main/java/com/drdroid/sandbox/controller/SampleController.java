@@ -1,8 +1,8 @@
 package com.drdroid.sandbox.controller;
 
 import com.drdroid.sandbox.models.Order;
-import org.drdroid.api.DrDroidClient;
-import org.drdroid.api.models.ClientConfig;
+import io.drdroid.api.DrDroidClient;
+import io.drdroid.api.models.ClientConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,14 +48,14 @@ public class SampleController {
         this.killTraffic = false;
         while (!this.killTraffic) {
             Order order = generateRandomOrder();
-            Map<String, Object> kvPairs = new HashMap<>();
-            kvPairs.put("order_id", order.getOrderId());
-            kvPairs.put("city", order.getCity());
-            kvPairs.put("pickup_location", order.getPickup());
-            kvPairs.put("drop_location", order.getDrop());
-            kvPairs.put("merchant_id", order.getMerchantId());
-            kvPairs.put("order_value", order.getOrderValue());
-            drDroidClient.send("sample-workflow", "test", kvPairs);
+            Map<String, Object> payload = new HashMap<>();
+            payload.put("order_id", order.getOrderId());
+            payload.put("city", order.getCity());
+            payload.put("pickup_location", order.getPickup());
+            payload.put("drop_location", order.getDrop());
+            payload.put("merchant_id", order.getMerchantId());
+            payload.put("order_value", order.getOrderValue());
+            drDroidClient.send("sample-workflow", "test", payload);
             System.out.println(String.format("Posted dr droid event for: %s", order));
         }
     }

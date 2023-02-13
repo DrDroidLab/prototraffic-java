@@ -7,5 +7,3 @@ pluginManagement {
 }
 rootProject.name = 'sandbox'
 
-include ':drdroidapi-java'
-project(':drdroidapi-java').projectDir = new File('/Users/mohit.goyal/DrDroidLab/drdroidapi-java')

@@ -4,6 +4,12 @@ This repository contains with the following:
 - A traffic simulator for the above Spring Boot Application
 
 
+## Import DrDroid Java SDK
+Add the following dependency in your gradle folder to import drdroid java sdk into your project
+```
+implementation group: 'io.drdroid', name: 'api-java', version: '1.0.0'
+```
+
 ## Build Project
 Run the following command to install java dependencies and traffic simulator
 ```
@@ -23,7 +29,7 @@ drDroidClient.send("sample-workflow-name", "sample-state", kvPairs);
 
 You'll need to setup a few environment variables for the SDK configuration. Here is complete documentation about the SDK [drdroidapi-java](https://github.com/DrDroidLab/drdroidapi-java) and how to configure it.
 
-## Run the Flask application
+## Run the SpringBoot application
 Running the following command to start the java application on port 8082. It is not dockerized.
 ```
 java -jar build/libs/sandbox-0.0.1-SNAPSHOT.jar
