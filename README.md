@@ -19,8 +19,8 @@ Run the following command to install java dependencies and traffic simulator
 ## Generating custom events for Doctor Droid
 ```
 // Put the following as the class imports
-import org.drdroid.api.DrDroidClient;
-import org.drdroid.api.models.ClientConfig;
+import io.drdroid.api.DrDroidClient;
+import io.drdroid.api.models.ClientConfig;
 
 
 // Add events like this
